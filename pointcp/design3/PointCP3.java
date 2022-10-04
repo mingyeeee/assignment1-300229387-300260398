@@ -29,10 +29,20 @@ public class PointCP3 extends PointCP5
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP3(double x, double y)
+  public PointCP3(char type, double xOrRho, double yOrTheta)
   {
-    this.x = x;
-    this.y = y;
+    if(type != 'C' && type != 'P')
+      throw new IllegalArgumentException();
+    if(type != 'C')
+    {
+      this.x = Math.cos(Math.toRadians(yOrTheta)) * xOrRho;
+      this.y = Math.sin(Math.toRadians(yOrTheta)) * xOrRho;
+    }
+    else
+    {
+      this.x = xOrRho;
+      this.y = yOrTheta;
+    }
   }
 	
   
@@ -91,7 +101,7 @@ public class PointCP3 extends PointCP5
     double X = getX();
     double Y = getY();
         
-    return new PointCP3(
+    return new PointCP3('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
@@ -103,6 +113,6 @@ public class PointCP3 extends PointCP5
    */
   public String toString()
   {
-    return "Stored as Polar [" + getRho() + "," + getTheta() + "]\n";
+    return "Stored as Cartesian (" + getX() + "," + getY() + ")\n";
   }
 }

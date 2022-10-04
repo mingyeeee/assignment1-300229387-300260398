@@ -1,25 +1,19 @@
 
-public class PointCP2 {
+public class PointCP2 extends PointCP5 {
 
   //Instance variables ************************************************
 
   /**
-   * Contains C(artesian) or P(olar) to identify the type of
-   * coordinates that are being dealt with.
-   */
-  private char typeCoord;
-  
-  /**
    * Contains the current value of X or RHO depending on the type
    * of coordinates.
    */
-  private double xOrRho;
+  private double rho;
   
   /**
    * Contains the current value of Y or THETA value depending on the
    * type of coordinates.
    */
-  private double yOrTheta;
+  private double theta;
 	
   
   //Constructors ******************************************************
@@ -31,18 +25,16 @@ public class PointCP2 {
   {
     if(type != 'C' && type != 'P')
       throw new IllegalArgumentException();
-    if(type != 'C')
+    if(type != 'P')
     {
-        this.xOrRho = Math.cos(Math.toRadians(yOrTheta)) * xOrRho;
-        this.yOrTheta = Math.sin(Math.toRadians(yOrTheta)) * xOrRho;
+        this.rho = Math.cos(Math.toRadians(yOrTheta)) * xOrRho;
+        this.theta = Math.sin(Math.toRadians(yOrTheta)) * xOrRho;
     }
     else
     {
-        this.xOrRho = xOrRho;
-        this.yOrTheta = yOrTheta;
+        this.rho = xOrRho;
+        this.theta = yOrTheta;
     }
-    
-    typeCoord = 'C';
   }
 	
   
@@ -116,9 +108,7 @@ public class PointCP2 {
    */
   public String toString()
   {
-    return "Stored as " + (typeCoord == 'C' 
-       ? "Cartesian  (" + getX() + "," + getY() + ")"
-       : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
+    return "Stored as Polar [" + getRho() + "," + getTheta() + "]\n";
   }
 
 
