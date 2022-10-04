@@ -3,6 +3,7 @@
 // license found at http://www.site.uottawa.ca/school/research/lloseng/
 
 import java.io.*;
+import java.util.Date;
 
 /**
  * This class prompts the user for a set of coordinates, and then 
@@ -63,9 +64,111 @@ public class PointCPTest
         return;
       }
     }
+
     System.out.println("\nYou entered:\n" + point);
     System.out.println("\nCartesian: (" + point.getX() + ", "+point.getY()+")\n");
     System.out.println("\nPolar:(" + point.getRho() + ", "+point.getTheta()+")\n");
+
+    // Performance Test for 10 seconds
+    // set the starting time
+    long startTime = 0;
+    
+    long testRunNumber = 0;
+    long endTime = 0;
+    /************************************************************
+     *    Testing getX()
+     *  
+     * **********************************************************
+     */
+    // while 10 seconds has not elapsed
+    System.out.println("\n\nStarting getX() Test");
+    startTime = System.currentTimeMillis();
+    while(System.currentTimeMillis() - startTime < 10000)
+    {
+      
+      testRunNumber ++;
+      point.getX();
+    }
+    endTime = System.currentTimeMillis();
+    System.out.println("Total Times Function Ran: " + (testRunNumber));
+    System.out.println("getX() Average Time: " +((endTime - startTime)/(double)(testRunNumber)));
+    testRunNumber = 0;
+
+    /************************************************************
+     *    Testing getY()
+     *  
+     * **********************************************************
+     */
+    // while 10 seconds has not elapsed
+    System.out.println("\n\nStarting getY() Test");
+    startTime = System.currentTimeMillis();
+    while(System.currentTimeMillis() - startTime < 10000)
+    {
+      
+      testRunNumber ++;
+      point.getY();
+    }
+    endTime = System.currentTimeMillis();
+    System.out.println("Total Times Function Ran: " + (testRunNumber));
+    System.out.println("getY() Average Time: " +((endTime - startTime)/(double)(testRunNumber)));
+    testRunNumber = 0;
+
+    /************************************************************
+     *    Testing getRho()
+     *  
+     * **********************************************************
+     */
+    // while 10 seconds has not elapsed
+    System.out.println("\n\nStarting getRho() Test");
+    startTime = System.currentTimeMillis();
+    while(System.currentTimeMillis() - startTime < 10000)
+    {
+      
+      testRunNumber ++;
+      point.getRho();
+    }
+    endTime = System.currentTimeMillis();
+    System.out.println("Total Times Function Ran: " + (testRunNumber));
+    System.out.println("getRho() Average Time: " +((endTime - startTime)/(double)(testRunNumber)));
+    testRunNumber = 0;
+
+    /************************************************************
+     *    Testing getTheta()
+     *  
+     * **********************************************************
+     */
+    // while 10 seconds has not elapsed
+    System.out.println("\n\nStarting getTheta() Test");
+    startTime = System.currentTimeMillis();
+    while(System.currentTimeMillis() - startTime < 10000)
+    {
+      
+      testRunNumber ++;
+      point.getTheta();
+    }
+    endTime = System.currentTimeMillis();
+    System.out.println("Total Times Function Ran: " + (testRunNumber));
+    System.out.println("getTheta Average Time: " +((endTime - startTime)/(double)(testRunNumber)));
+    testRunNumber = 0;
+
+    /************************************************************
+     *    Testing getDistance()
+     *  
+     * **********************************************************
+     */
+    // while 10 seconds has not elapsed
+    System.out.println("\n\nStarting getDistance() Test");
+    startTime = System.currentTimeMillis();
+    while(System.currentTimeMillis() - startTime < 10000)
+    {
+      
+      testRunNumber ++;
+      point.getDistance(new PointCP2('C', 0,0));
+    }
+    endTime = System.currentTimeMillis();
+    System.out.println("Total Times Function Ran: " + (testRunNumber));
+    System.out.println("getDistance() Average Time: " +((endTime - startTime)/(double)(testRunNumber)));
+    testRunNumber = 0;
   }
 
   /**
