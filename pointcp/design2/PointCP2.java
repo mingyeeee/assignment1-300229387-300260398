@@ -39,28 +39,26 @@ public class PointCP2 extends PointCP5 {
 	
   
   //Instance methods **************************************************
- 
- 
+  
+  
   public double getX()
   {
-    return xOrRho;
-
+    return (Math.cos(Math.toRadians(theta)) * rho);
   }
   
   public double getY()
   {
-    return yOrTheta;
+    return (Math.sin(Math.toRadians(theta)) * rho);
   }
   
   public double getRho()
   {
-    return (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
+    return rho;
   }
   
   public double getTheta()
   {
-
-    return Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+    return theta;
   }
 	
 
@@ -110,6 +108,4 @@ public class PointCP2 extends PointCP5 {
   {
     return "Stored as Polar [" + getRho() + "," + getTheta() + "]\n";
   }
-
-
 }
