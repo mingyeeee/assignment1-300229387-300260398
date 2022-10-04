@@ -8,7 +8,7 @@ import java.io.*;
  * This class prompts the user for a set of coordinates, and then 
  * converts them from polar to cartesian or vice-versa.
  *
- * @author Fran&ccedil;ois B&eacute;langer
+ * @author François Bélanger
  * @author Dr Timothy C. Lethbridge
  * @author Paul Holden
  * @version July 2000
