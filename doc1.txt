@@ -1,0 +1,12 @@
+What you think are the advantages and disadvantages of each design:
+
+I think the advantages or disadvantages of each design depend pretty much only on their usage. Storing and retreaving values of a same coordinate system is much less costly that converting coordinate space. If your program operates mostly in the cartesian space, PointCP3 is preferable to PointC2. I also think, from experience, that converting from polar coordinates to cartesian is much less costly than cartesian to polar coordinates since generally the sin() and cos() functions are cheaper to computer than the pow() and atan2() functions.
+
+
+How you did the test, (sample outputs from the tests) discussion of the result.
+
+To conduct our tests, for each function we wanted to test; we first started a stopwatch, then recorded time it took to run the function about 200M times. After our iteration, we stop the stopwatch and divide the total time by the iteration count to calculate the average time of each executions.
+
+[Sample outputs from running the tests]
+
+[Discuss the results] (Couldn't do that right now since I don't have them lol and I don't want to predict them)
