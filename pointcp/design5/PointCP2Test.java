@@ -14,7 +14,7 @@ import java.util.*;
  * @author Paul Holden
  * @version July 2000
  */
-public class PointCPTest
+public class PointCP2Test
 {
   //Class methods *****************************************************
 
@@ -34,7 +34,7 @@ public class PointCPTest
    */
   public static void main(String[] args)
   {
-    PointCP2 point;
+    PointCP5 point;
 
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
